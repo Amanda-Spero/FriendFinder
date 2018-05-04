@@ -84,7 +84,7 @@
 <p></p>
 
 <h3>Question 5</h3>
-<p>Not using oxford comma is justifiable grounds for divorce.</p>
+<p>Not using the oxford comma is justifiable grounds for divorce.</p>
 
 
 <select id="qFive">
@@ -171,7 +171,36 @@
   </div>
 </footer>
 
+
+<!-- Modal Dialog Displaying Closest Friend Match -->
+<!--div id="modal1" class="modal">
+		<div class="modal-content">
+			<h4>Closest Friend Match</h4>
+			<div class="divider"></div>
+			<h5 id="userMatch"></h5>
+			<img id="userMatchImage" class="materialboxed" width="650" src="">
+		</div>
+		<div class="modal-footer">
+			<a href="/survey" class="modal-action modal-close waves-effect waves-green btn-flat">Fill Again!</a>
+		</div>
+	</div-->
+
 <script type="text/javascript">
+		// $(document).ready(function() {
+		// 	$('select').material_select();
+		// 	$('.modal').modal({
+		// 		dismissible: false, // Modal can be dismissed by clicking outside of the modal
+		// 		opacity: .5, // Opacity of modal background
+		// 		inDuration: 300, // Transition in duration
+		// 		outDuration: 200, // Transition out duration
+		// 		startingTop: '4%', // Starting top style attribute
+		// 		endingTop: '10%' // Ending top style attribute
+		// 	});
+                // });
+                
+ ////               
+
+//<script type="text/javascript">
         // Question: What does this code do?
         $("#submit").on("click", function(event) {
           event.preventDefault();
@@ -191,14 +220,26 @@
                 $("#qNine").val(), 
                 $("#qTen").val()
             ],
-          };
-        //console.log(newfriend);
+        };
+        console.log(newfriend);
 
-$.post("/api/friends", newfriend)
+        $.post("/api/friends", newfriend)
         .then(function(data){
         //newfriend = req.body;
         console.log(newfriend)
 });
+
+
+// $.post("/api/friends", newfriend)
+//         .then(function(data){
+//         newfriend = req.body;
+
+//         console.log(newfriend)
+//         $("#userMatch").html(data.matchName);
+// 	$("#userMatchImage").attr("src", data.matchImage);
+//       	$("#modal1").modal("open");
+// });
+})
 
       // Question: What does this code do??
 //       $.post("/api/friends", newfriend, function(data, err){

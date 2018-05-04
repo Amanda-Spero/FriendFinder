@@ -33,9 +33,7 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/err.html"));
     });
   
-  app.get("/friendlist", function(req, res) {
-      res.sendFile(path.join(__dirname, "../public/friendList.html"));
-      });
+ 
 }
 
 
