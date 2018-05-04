@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <title>FriendFinder</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
   <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -162,7 +163,7 @@
 
 <hr>
 
-<button type="submit" id = "submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+<button type="submit" id = "submit" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#matchModal">Submit</button>
 
 <hr>
 <footer class="footer">
@@ -170,6 +171,28 @@
     <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/Mandolin77/Friend-Finder.git">GitHub Repo</a></p>
   </div>
 </footer>
+
+<!-- Modal -->
+<div class="modal fade" id="matchModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="matchModal">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </div>
 
 
 <!-- Modal Dialog Displaying Closest Friend Match -->
@@ -220,13 +243,30 @@
                 $("#qNine").val(), 
                 $("#qTen").val()
             ],
-        };
-        console.log(newfriend);
+        }
+        //console.log(newfriend);
 
         $.post("/api/friends", newfriend)
         .then(function(data){
         //newfriend = req.body;
         console.log(newfriend)
+
+        });
+                // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+        // $("#match-name").text(data.name);
+        // $("#match-img").attr("src", data.photo);
+
+        //   // Show the modal with the best match
+        // $("#results-modal").modal("toggle");
+
+        // });
+        // $(".modal").modal();
+    
+        app.post("/api/clear", function() {
+      // Empty out the arrays of data
+      friendData = [];  
+      
+    });
 });
 
 
@@ -239,7 +279,7 @@
 // 	$("#userMatchImage").attr("src", data.matchImage);
 //       	$("#modal1").modal("open");
 // });
-})
+
 
       // Question: What does this code do??
 //       $.post("/api/friends", newfriend, function(data, err){

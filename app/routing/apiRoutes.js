@@ -1,4 +1,8 @@
 var friendData = require("../data/friends");
+var path = require('path');
+var bodyParser = require("body-parser");
+var http = require("http");
+
 
 // A GET route with the url /api/friends. This will be used to display a JSON of all possible friends.
 
@@ -17,53 +21,33 @@ app.get("/api/friends", function(req, res) {
 app.post("/api/friends", function(req, res) {
     // req.body hosts is equal to the JSON post sent from the user
     // This works because of our body-parser middleware
-    friendData.push(req.body)
-    res.json(true);
+    var newFriendScores = req.body.scores;
+    var scoresArray = [];
+    var friendCount = 0;
+    var bestMatch = 0;
 
+    for(var i = 0; i < friendData.length; i++){
+        var scoresDiff = 0;
+        for(var j = 0; j < newFriendScores.length; j++){
+            scoresDiff += (Math.abs(parseInt(friendData[i].scores[j]) - parseInt(newFriendScores[j])));
+        }
+        scoresArray.push(scoresDiff);
+        console.log(scoresDiff);
+    }
+    for(var i = 0; i < scoresArray.length; i++){
+        if (scoresArray[i] <= scoresArray[nestMatch]){
+            bestMatch = i;
+            console.log(bestMatch);
+        }
+    }
 
+    var bff = friendList[bestMatch];
+    console.log(bff);
+    res.json(bff);
 
-    // var friendInfo = req.body;
-    // var friendAnswers = friendInfo.scores
-    // console.log(friendInfo);
-    // console.log(friendAnswers);
-    // //??
-    // //res.json(true);
-    // var matchName = "";
-    // var matchImage = "";
-    // var totalDifference = 10000;
-
-    // //friends.length??
-    // for (var i = o; i < friends.length; i++){
-    //     var diff = 0;
-    // //userResponses.length?
-    //     for (var j = 0; j<newfriend.length; j++) {
-    //         dif += Math.abs(friendsArray[i].scores[j] - newfriend[j]);
-    //     }
-    //     if (diff < totalDifference) {
-    //         totalDifference = diff;
-    //         matchName = friendsArray[i].name;
-    //         matchImage = friendsArray[i].photo;
-
-    //     }
-    // }
-    // res.json({status: 'OK', matchName: matchName, matchImage: matchImage});
+    friendData.push(req.body);
+    //res.json(true);
 
 });
-    // Using a RegEx Pattern to remove spaces from newCharacter
-    // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-
-    //?
-    // newfriend.routeName = newfriend.name.replace(/\s+/g, "").toLowerCase();
-  
-    // console.log(newfriend);
-  
-    // characters.push(newfriend);
-  
-    // res.json(newfriend);
-    //?
-    app.post("/api/clear", function() {
-      // Empty out the arrays of data
-      friendData = [];  
-      console.log(friendData);
-    });
 }
+
