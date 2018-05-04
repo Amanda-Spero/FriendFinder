@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>FriendFinder</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <header>
+        <h2 style="margin: 5%">Survey Questions</h2>
+        <hr></hr>
+    </header>
+<h3 style="margin: 5%">About You</h3>
+
+<form>
+        <div class="form-group" style="margin: 5%">
+                <div class="col-md-8">
+          <label for="formGroupExampleInput">Name (Required)</label>
+          <input type="text" class="form-control" id="name" required = "">
+        </div>
+        <div class="form-group">
+                <div class="col-md-8">
+          <label for="formGroupExampleInput2">Link to Photo  Image(Required)</label>
+          <input type="url" class="form-control" id="photo" required = "">
+        </div>
+</form>
+<hr>
+
+<h3>Question 1</h3>
+<p>Guacamole is love.  Guacamole is life.</p>
+<select id="qOne"> 
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+</select>
+<p></p>
+
+<h3>Question 2</h3>
+<p>It should have been Harry and Luna.</p>
+
+<select id="qTwo">
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+</select>
+<p></p>
+
+<h3>Question 3</h3>
+<p>Han shot first.</p>
+
+
+<select id="qThree">
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+</select>
+<p></p>
+
+<h3>Question 4</h3>
+<p>Pineapple on pizza is an abomination.  An abomination.</p>
+
+
+<select id="qFour">
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+</select>
+<p></p>
+
+<h3>Question 5</h3>
+<p>Not using oxford comma is justifiable grounds for divorce.</p>
+
+
+<select id="qFive">
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+</select>
+<p></p>
+
+<h3>Question 6</h3>
+<p>Question 6</p>
+
+
+<select id="qSix">
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+</select>
+<p></p>
+
+<h3>Question 7</h3>
+<p>Question 7</p>
+
+
+<select id="qSeven">
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+</select>
+<p></p>
+
+<h3>Question 8</h3>
+<p>Question 8</p>
+
+
+<select id="qEight">
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+</select>
+<p></p>
+
+<h3>Question 9</h3>
+<p>Question 9</p>
+
+
+<select id="qNine">
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+</select>
+<p></p>
+
+<h3>Question 10</h3>
+<p>Question 10</p>
+
+
+<select id="qTen">
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+</select>
+
+<hr>
+
+<button type="submit" id = "submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+
+<hr>
+<footer class="footer">
+  <div class="container">
+    <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/???/friendfinder">GitHub Repo</a></p>
+  </div>
+</footer>
+
+<script type="text/javascript">
+        // Question: What does this code do?
+        $("#submit").on("click", function(event) {
+          event.preventDefault();
+          var newfriend = {
+            routename: $("#name").val().trim().toLowerCase(),    
+            name: $("#name").val().trim(),
+            photo: $("#photo").val().trim(),
+            scores: [
+                $("#qOne").val(), 
+                $("#qTwo").val(), 
+                $("#qThree").val(), 
+                $("#qFour").val(), 
+                $("#qFive").val(), 
+                $("#qSix").val(), 
+                $("#qSeven").val(), 
+                $("#qEight").val(), 
+                $("#qNine").val(), 
+                $("#qTen").val()
+            ],
+          };
+        //console.log(newfriend);
+
+$.post("/api/friends", newfriend)
+        .then(function(data){
+        //newfriend = req.body;
+        console.log(newfriend)
+});
+
+      // Question: What does this code do??
+//       $.post("/api/friends", newfriend, function(data, err){
+     
+//         $("#match-name").text(data.name);
+//         $("#match-pic").attr("src", data.photo);
+//         $("#results-modal").modal("toggle");
+
+//        //error message
+//       })
+
+//reset form
+   
+    
+// run friendMatch();  
+       
+        
+
+
+
+</script>
+
+</body>
+</html>
+
