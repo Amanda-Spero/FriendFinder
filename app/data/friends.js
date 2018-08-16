@@ -200,46 +200,4 @@ var friendsArray = [
 
 ]
 
-
-// var friendMatch = function() {
-//     for (var i = 0; i = friend.scores.length; i++) {
-//         for (var j = 0; j = newfriend.scores.length; j++)
-//      var difference = function (i, j) { return Math.abs(i - j); }
-//     }
-
-    //console.log(difference);
-///cycle through all the differences and return lowest difference profile
-
-    //return res.json(characters[i]);
-
-//}
-
-// function showAllFriends() {
-//     var currentURL = window.location.origin;
-//     $.ajax({ url: currentURL + "/api/friends", method: "GET" })
-//     .then(function(friendsData) {
-//         console.log("------------------------------------");
-//         console.log("URL: " + currentURL + "/api/friends");
-//         console.log("------------------------------------");
-//         console.log(friendsData);
-//         console.log("------------------------------------");
-
-//   // Loop through and display each of the customers
-//   for (var i = 0; i < friendsData.length; i++) {
-
-//     // Create the HTML Well (Section) and Add the table content for each reserved table
-//       var friendSection = $("<div>");
-//       friendSection.addClass("well");
-//       friendSection.attr("id", "tableWell-" + i + 1);
-//       $("#friendSection").append(friendSection);
-
-//       var friendNumber = i + 1;
-
-
-//       // Then display the remaining fields in the HTML (Section Name, Date, URL)
-//       $("#tableWell-" + i + 1).append("<h2><span class='label label-primary'>" + friendNumber + "</span> | " + friendsData[i] + "</h2>");
-//     }
-//   })
-// }
-// showAllFriends();
 module.exports = friendsArray;

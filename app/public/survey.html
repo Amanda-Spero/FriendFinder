@@ -11,7 +11,6 @@
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
 
-
 </head>
 
 <body>
@@ -177,7 +176,8 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="matchModal">Modal title</h5>
+              <h5 class="modal-title" id="matchModal">Your Best Match</h5>
+              <h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -194,37 +194,9 @@
 
   </div>
 
-
-<!-- Modal Dialog Displaying Closest Friend Match -->
-<!--div id="modal1" class="modal">
-		<div class="modal-content">
-			<h4>Closest Friend Match</h4>
-			<div class="divider"></div>
-			<h5 id="userMatch"></h5>
-			<img id="userMatchImage" class="materialboxed" width="650" src="">
-		</div>
-		<div class="modal-footer">
-			<a href="/survey" class="modal-action modal-close waves-effect waves-green btn-flat">Fill Again!</a>
-		</div>
-	</div-->
-
 <script type="text/javascript">
-		// $(document).ready(function() {
-		// 	$('select').material_select();
-		// 	$('.modal').modal({
-		// 		dismissible: false, // Modal can be dismissed by clicking outside of the modal
-		// 		opacity: .5, // Opacity of modal background
-		// 		inDuration: 300, // Transition in duration
-		// 		outDuration: 200, // Transition out duration
-		// 		startingTop: '4%', // Starting top style attribute
-		// 		endingTop: '10%' // Ending top style attribute
-		// 	});
-                // });
-                
- ////               
 
-//<script type="text/javascript">
-        // Question: What does this code do?
+
         $("#submit").on("click", function(event) {
           event.preventDefault();
           var newfriend = {
@@ -252,53 +224,11 @@
         console.log(newfriend)
 
         });
-                // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-        // $("#match-name").text(data.name);
-        // $("#match-img").attr("src", data.photo);
 
-        //   // Show the modal with the best match
-        // $("#results-modal").modal("toggle");
-
-        // });
-        // $(".modal").modal();
     
-        app.post("/api/clear", function() {
-      // Empty out the arrays of data
-      friendData = [];  
+     
       
     });
-});
-
-
-// $.post("/api/friends", newfriend)
-//         .then(function(data){
-//         newfriend = req.body;
-
-//         console.log(newfriend)
-//         $("#userMatch").html(data.matchName);
-// 	$("#userMatchImage").attr("src", data.matchImage);
-//       	$("#modal1").modal("open");
-// });
-
-
-      // Question: What does this code do??
-//       $.post("/api/friends", newfriend, function(data, err){
-     
-//         $("#match-name").text(data.name);
-//         $("#match-pic").attr("src", data.photo);
-//         $("#results-modal").modal("toggle");
-
-//        //error message
-//       })
-
-//reset form
-   
-    
-// run friendMatch();  
-       
-        
-
-
 
 </script>
 
