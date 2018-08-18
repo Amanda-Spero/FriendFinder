@@ -1,30 +1,17 @@
-// Dependencies
-// =============================================================
-var express = require("express");
-var bodyParser = require("body-parser");
-var path = require("path");
-var http = require("http");
+//  Dependencies
+//  require path package to get the correct file path for the html
+const path = require('path');
 
 // Sets up the Express App
-// =============================================================
-var app = express();
-var PORT = process.env.PORT || 3000;
+//  HTML GET requests for when a user "visits" a page
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
-module.exports = function(app) {
-
-  app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "../public/home.html"));
+module.exports = function (app) {
+  app.get('/survey', (req, res) => {
+    res.sendFile(path.join(__dirname, '/../public/survey.html'));
   });
 
-  app.get("/survey", function(req, res) {
-  res.sendFile(path.join(__dirname, "../public/survey.html"));
+  // If no matching route is found default to home
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '/../public/home.html'));
   });
-
-  app.get("/error", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/err.html"));
-    });
-   
-}
+};

@@ -1,42 +1,43 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-<head>
-  <meta charset="UTF-8">
-  <title>FriendFinder</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <title>FriendFinder</title>
+  
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    
+    <!-- Chosen -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+  
+  </head>
+  
 
 <body>
-    <header>
-        <h2 style="margin: 5%">Survey Questions</h2>
-        <hr></hr>
-    </header>
-<h3 style="margin: 5%">About You</h3>
+  <div class="container">
 
-<form>
-        <div class="form-group" style="margin: 5%">
-                <div class="col-md-8">
-          <label for="formGroupExampleInput">Name (Required)</label>
-          <input type="text" class="form-control" id="name" required = "">
-        </div>
-        <div class="form-group">
-                <div class="col-md-8">
-          <label for="formGroupExampleInput2">Link to Photo  Image(Required)</label>
-          <input type="url" class="form-control" id="photo" required = "">
-        </div>
-</form>
-<hr>
+        <h2>Survey Questions</h2>
+        <hr>
+
+        <h3><strong>About You</strong></h3>
+        <h4>Name (Required)</h4>
+        <input type="text" id="name" class="form-control" required>
+
+        <h4>Link to Photo Image (Required)</h4>
+        <input type="text" id="photo" class="form-control" required>
+
+        <hr>
+                
 
 <h3>Question 1</h3>
 <p>Guacamole is love.  Guacamole is life.</p>
-<select id="qOne"> 
+<select class='chosen-select' id="qOne">
+        <option value=""></option> 
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -47,8 +48,8 @@
 
 <h3>Question 2</h3>
 <p>It should have been Harry and Luna.</p>
-
-<select id="qTwo">
+<select class='chosen-select' id="qTwo">
+        <option value=""></option> 
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -59,9 +60,8 @@
 
 <h3>Question 3</h3>
 <p>Han shot first.</p>
-
-
-<select id="qThree">
+<select class='chosen-select' id="qThree">
+        <option value=""></option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -72,9 +72,8 @@
 
 <h3>Question 4</h3>
 <p>Pineapple on pizza is an abomination.  An abomination.</p>
-
-
-<select id="qFour">
+<select class='chosen-select' id="qFour">
+        <option value=""></option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -85,9 +84,8 @@
 
 <h3>Question 5</h3>
 <p>Not using the oxford comma is justifiable grounds for divorce.</p>
-
-
-<select id="qFive">
+<select class='chosen-select' id="qFive">
+        <option value=""></option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -98,9 +96,8 @@
 
 <h3>Question 6</h3>
 <p>Chuck Norris is overrated.</p>
-
-
-<select id="qSix">
+<select class='chosen-select' id="qSix">
+        <option value=""></option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -111,9 +108,8 @@
 
 <h3>Question 7</h3>
 <p>McDonald's fries &gt; Burger King fries</p>
-
-
-<select id="qSeven">
+<select class='chosen-select' id="qSeven">
+        <option value=""></option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -124,9 +120,8 @@
 
 <h3>Question 8</h3>
 <p>Coke &gt; Pepsi</p>
-
-
-<select id="qEight">
+<select class='chosen-select' id="qEight">
+        <option value=""></option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -137,9 +132,8 @@
 
 <h3>Question 9</h3>
 <p>There never has been or will be a better mustache than Freddie Mercury's.</p>
-
-
-<select id="qNine">
+<select class='chosen-select' id="qNine">
+        <option value=""></option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -150,9 +144,8 @@
 
 <h3>Question 10</h3>
 <p>Bob Ross was an angel.</p>
-
-
-<select id="qTen">
+<select class='chosen-select' id="qTen">
+        <option value=""></option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -160,49 +153,86 @@
         <option value="5">5 (Strongly Agree)</option>
 </select>
 
-<hr>
+<br>
+<br>
 
-<button type="submit" id = "submit" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#matchModal">Submit</button>
-
+<button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>
+Submit</button>
+   
 <hr>
 <footer class="footer">
   <div class="container">
-    <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/Mandolin77/FriendFinder.git">GitHub Repo</a></p>
+    <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/Amanda-Spero/FriendFinder.git">GitHub Repo</a></p>
   </div>
 </footer>
+</div>
 
-<!-- Modal -->
-<div class="modal fade" id="matchModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="matchModal">Your Best Match</h5>
-              <h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-          </div>
+  <!-- Modal -->
+  <div id="results-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+        <div class="modal-header">
+        <button class="close" data-dismiss="modal">&times;</button>
+        <h2 class="modal-title"><strong>Best Match</strong></h2>
         </div>
+        <div class="modal-body">
+        <h2 id="match-name"></h2>
+        <img id="match-img" src="https://beautyhealthtips.in/wp-content/uploads/2017/09/face_shine_glow.jpg" alt="">
+        </div>
+        <div class="modal-footer">
+        <button class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
+    </div>
 
-  </div>
+   </div>
+</div>            
 
 <script type="text/javascript">
 
+  var config = {
+        ".chosen-select": {},
+        ".chosen-select-deselect": {
+        allow_single_deselect: true
+        },
+        ".chosen-select-no-single": {
+        disable_search_threshold: 10
+        },
+        ".chosen-select-no-results": {
+        no_results_text: "Oops, nothing found!"
+        },
+        ".chosen-select-width": {
+        width: "95%"
+        },
+        };
+
+   for (var selector in config) {
+      $(selector).chosen(config[selector]);
+    }
+        // $(".chosen-select").chosen('destroy');
+        // $(".chosen-select").chosen({width: "100px"});
 
         $("#submit").on("click", function(event) {
           event.preventDefault();
-          var newfriend = {
-            routename: $("#name").val().trim().toLowerCase(),    
-            name: $("#name").val().trim(),
-            photo: $("#photo").val().trim(),
+
+        //   form validation
+        function validateForm() {
+                var isValid = true;
+                $('.form-control').each(function() {
+                  if ($(this).val() === '') {
+                    isValid = false;
+                  }
+                });
+                return isValid;
+        }
+
+          //   if all required firlds are filled
+          if(validateForm()) {
+                //  create an object for the user's data
+          var userData = {
+            name: $("#name").val(),
+            photo: $("#photo").val(),
             scores: [
                 $("#qOne").val(), 
                 $("#qTwo").val(), 
@@ -214,24 +244,24 @@
                 $("#qEight").val(), 
                 $("#qNine").val(), 
                 $("#qTen").val()
-            ],
-        }
-        //console.log(newfriend);
+            ]
+        };
 
-        $.post("/api/friends", newfriend)
-        .then(function(data){
-        //newfriend = req.body;
-        console.log(newfriend)
+        //  AJAX post the data to the friends API
+        $.post("/api/friends", userData, function(data) {
+                //  display the user's name and photo
+            $('#match-name').text(data.name);
+            $('#match-img').attr('src', data.photo);
+
+            //  show the modal with the best friend match
+            $('#results-modal').modal('toggle');
 
         });
-
-    
-     
-      
+        } else {  
+        alert('Please fill out all fields before submitting!');
+        }
     });
-
 </script>
 
 </body>
 </html>
-
